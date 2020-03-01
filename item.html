@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Hladka (final task feb 2020)</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-top-wrapper">
+      <div class="header-top container">
+        <div class="header-top__left">
+          <a href="index.html" class="logo visible-xs">TL</a>
+          <a href="index.html" class="logo xs-d-none">Template</a>
+        </div>
+        <div class="header-top__right">
+          <a href="#" class="header__link xs-d-none">E-mail sing up</a>
+          <a href="#" class="cart-link header__link">
+            <img src="img/icons/ico_bag.png" alt="cart icon" class="cart-link__icon">
+            Bag <span id="cart-quantity">(0)</span></a>
+          <button class="menu-btn sm-d-none">
+            <svg width="14" height="12" viewBox="0 0 14 12" class="menu-btn__menu-ic">
+              <path id="ico_menu" class="menu-btn__menu-ic_color"
+                d="M341,33h14v2H341V33Zm0-5h14v2H341V28Zm0,10h14v2H341V38Z" transform="translate(-341 -28)" />
+            </svg>
+
+            <svg width="15" height="15" viewBox="0 0 15 15" class="menu-btn__close-ic">
+              <path id="ico_close" class="menu-btn__close-ic-color"
+                d="M339.993,29.375l2.382-2.382,12.632,12.632-2.382,2.382Zm12.632-2.382,2.382,2.382L342.375,42.007l-2.382-2.382Z"
+                transform="translate(-340 -27)" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="header-menu-wrapper container">
+      <nav class="header-menu">
+        <ul class="header-menu__list">
+          <li class="header-menu__item"><a href="#" class="header-menu__item-link">Women</a></li>
+          <li class="header-menu__item"><a href="#" class="header-menu__item-link">Man</a></li>
+          <li class="header-menu__item"><a href="#" class="header-menu__item-link">Handbags</a> </li>
+          <li class="header-menu__item"><a href="#" class="header-menu__item-link">Accessories</a></li>
+          <li class="header-menu__item"><a href="#" class="header-menu__item-link">Sale</a></li>
+          <li class="header-menu__item"><a href="#" class="header-menu__item-link">New Arrivals</a></li>
+          <li class="header-menu__item"><a href="#" class="header-menu__item-link">Clearance</a></li>
+          <li class="header-menu__item"><a href="#" class="header-menu__item-link">Store Locator</a></li>
+        </ul>
+      </nav>
+      <div class="header-menu-search">
+        <input type="search" placeholder="Style Name" class="header-menu-search__input">
+        <span class="header-menu-search__ic">
+          <svg width="12.13" height="12.125" viewBox="0 0 12.13 12.125">
+            <path id="ico" class="header-menu-search__ic-color"
+              d="M1237.04,90.816l3.08,3.1-1.21,1.213-3.08-3.084a5.05,5.05,0,0,1-2.85.906,4.96,4.96,0,1,1,4.97-4.966A4.968,4.968,0,0,1,1237.04,90.816Zm-1.54-.311a3.57,3.57,0,0,0,.94-2.525,3.442,3.442,0,0,0-.94-2.468,3.627,3.627,0,0,0-2.52-1,3.555,3.555,0,0,0-2.5,6A3.659,3.659,0,0,0,1235.5,90.5Z"
+              transform="translate(-1228 -83)" />
+          </svg>
+
+        </span>
+      </div>
+    </div>
+  </header>
+  <div class="main-content">
+    <div class="bradcrumbs-holder block_separator">
+      <div class="bradcrumbs container">
+        <!-- <h4 class="bradcrumbs__title">Shopping Bag</h4> -->
+        <a href="catalog.html" class="bradcrumbs__link">&lt; Back to catalog</a>
+      </div>
+    </div>
+    <section class="item-section-holder block_separator">
+      <div class="item-section container">
+        <div class="item-view">
+          <div class="item-view__full">
+            <img src="img/items/dark-classic-fit-suit_full-0.jpg" alt="Dark classic fit suit" class="item-view__img">
+          </div>
+          <div class="item-view__switcher">
+            <div class="item-view__switcher-thumbnail active">
+              <img src="img/items/dark-classic-fit-suit_thumb-0.jpg" alt="Dark classic fit suit 1"
+                class="item-view__img">
+            </div>
+            <div class="item-view__switcher-thumbnail">
+              <img src="img/items/dark-classic-fit-suit_thumb-1.jpg" alt="Dark classic fit suit 2"
+                class="item-view__img">
+            </div>
+            <div class="item-view__switcher-thumbnail">
+              <img src="img/items/dark-classic-fit-suit_thumb-2.jpg" alt="Dark classic fit suit 3"
+                class="item-view__img">
+            </div>
+          </div>
+        </div>
+        <div class="item-descr">
+          <h2 class="item-descr__title">Dark classic fit suit</h2>
+          <div class="item-descr__price">£180.60</div>
+          <p class="section__p item-descr__text">Featuring fine Italian wool, this elegant suit has pick-stitch edging,
+            cascade
+            buttons at the cuffs
+            and a subtle stripe pattern throughout. </p>
+
+          <div class="item-desc__prod-prop-wrapper">
+            <div class="item-desc__prod-prop prod-size">
+              <span class="prod-prop__text">Size:</span>
+              <div class="prod-prop__value">
+                <input checked type="radio" value="UK 52" name="size" class="prod-prop__radio" id="uk52">
+                <label class="prod-prop__label" for="uk52">UK 52</label>
+              </div>
+              <div class="prod-prop__value">
+                <input type="radio" value="UK 54" name="size" class="prod-prop__radio" id="uk54">
+                <label class="prod-prop__label" for="uk54">UK 54</label>
+              </div>
+              <div class="prod-prop__value">
+                <input type="radio" value="UK 56" name="size" class="prod-prop__radio" id="uk56">
+                <label class="prod-prop__label" for="uk56">UK 56</label>
+              </div>
+            </div>
+            <div class="item-desc__prod-prop prod-color">
+              <span class="prod-prop__text">Color:</span>
+              <div class="prod-prop__value">
+                <input type="radio" value="Black" name="color" class="prod-prop__radio" id="black">
+                <label class="prod-prop__label" for="black">Black</label>
+              </div>
+              <div class="prod-prop__value">
+                <input checked type="radio" value="Blue" name="color" class="prod-prop__radio" id="blue">
+                <label class="prod-prop__label" for="blue">Blue</label>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="btn item-section__btn">Add to bag</a>
+
+        </div>
+
+
+      </div>
+    </section>
+
+    <div class="block_separator">
+      <div class="wrapper">
+        <div class="banners">
+          <div class="banner">
+            <a href="#" class="banner-link">
+              <img class="banner-link__img" src="img/adidas-blue.jpg" alt="adidas-blue">
+              <div class="banner-text banner-text_white">
+                <div class="banner-text__title">Adidas Blue</div>
+                <div class="banner-text__info banner-text__info_white">For men</div>
+              </div>
+            </a>
+          </div>
+          <div class="banner xs-d-none">
+            <a href="catalog.html" class="banner-link">
+              <img class="banner-link__img" src="img/repair-patches.jpg" alt="repair-patches">
+              <div class="banner-text banner-text_bottom banner-text_center banner-text_white">
+                <div class="banner-text__title">Repair Patches</div>
+                <div class="banner-text__info banner-text__info_white">£ 150.50</div>
+              </div>
+            </a>
+          </div>
+          <div class="banner xs-d-none sm-d-none lg-visible">
+            <a href="catalog.html" class="banner-link">
+              <img class="banner-link__img" src="img/beg-sale.jpg" alt="sale">
+              <div class="banner-text banner-text_bottom banner-text_center">
+                <div class="banner-text__title banner-text__title_red">Sale</div>
+                <div class="banner-text__info">-70%</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="block_separator">
+      <div class="footer-top container">
+        <div class="footer-top__left">
+          <div class="footer-box">
+            <h5 class="footer__title">Quick Links</h5>
+            <ul class="footer__list">
+              <li class="footer__list-item"><a href="#" class="footer__list-link">Store locator</a></li>
+              <li class="footer__list-item"><a href="#" class="footer__list-link">Gift cards</a></li>
+              <li class="footer__list-item"><a href="#" class="footer__list-link">Size guide</a></li>
+              <li class="footer__list-item"><a href="#" class="footer__list-link">About us</a></li>
+              <li class="footer__list-item"><a href="#" class="footer__list-link">Support</a></li>
+            </ul>
+          </div>
+          <div class="footer-box">
+            <h5 class="footer__title">Customer Care</h5>
+            <ul class="footer__list">
+              <li class="footer__list-item"><a href="#" class="footer__list-link">Customer service</a></li>
+              <li class="footer__list-item"><a href="#" class="footer__list-link">Track my order</a></li>
+              <li class="footer__list-item"><a href="#" class="footer__list-link">Return policy</a></li>
+              <li class="footer__list-item"><a href="#" class="footer__list-link">Shipping & delivery</a></li>
+              <li class="footer__list-item"><a href="#" class="footer__list-link">Contact us</a></li>
+              <li class="footer__list-item"><a href="#" class="footer__list-link">Careers</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-top__right">
+          <div class="footer-box">
+            <h5 class="footer__title">Questions</h5>
+            <p class="footer__text">
+              <svg width="14" height="11" viewBox="0 0 14 11" class="footer__text-ic twi-ic">
+                <path class="twi-ic_color"
+                  d="M723,2414.3a6.032,6.032,0,0,1-1.65.44,2.8,2.8,0,0,0,1.263-1.54,5.98,5.98,0,0,1-1.824.68,2.918,2.918,0,0,0-2.1-.88,2.825,2.825,0,0,0-2.873,2.78,2.7,2.7,0,0,0,.075.63,8.266,8.266,0,0,1-5.921-2.9,2.7,2.7,0,0,0-.389,1.39,2.761,2.761,0,0,0,1.278,2.32,2.985,2.985,0,0,1-1.3-.35v0.03a2.812,2.812,0,0,0,2.3,2.73,3.133,3.133,0,0,1-.757.09,2.413,2.413,0,0,1-.54-0.05,2.853,2.853,0,0,0,2.683,1.93,5.859,5.859,0,0,1-3.568,1.19,5.185,5.185,0,0,1-.685-0.04,8.318,8.318,0,0,0,4.4,1.25,7.976,7.976,0,0,0,8.173-7.9q0-.18-0.009-0.36A5.656,5.656,0,0,0,723,2414.3"
+                  transform="translate(-709 -2413)" />
+              </svg>
+              Tweet us <b>@template</b></p>
+          </div>
+          <div class="footer-box">
+            <h5 class="footer__title">Order by phone</h5>
+            <p class="footer__text">8-800-409-47-12</p>
+          </div>
+          <div class="footer-top__right-box">
+            <p class="footer__italic-text lg-visible">We have our own delivery service which<br> operates in 23 major
+              European cities. Delivery<br> time - 3-5 days.
+            </p>
+            <ul class="socials-list footer-top__socials-list">
+              <li class="socials-list__item"><a href="https://www.facebook.com/" target="_blank"
+                  class="socials-list__item-link">
+                  <svg width="7" height="14" viewBox="0 0 7 14">
+                    <path class="facebook-ic_color"
+                      d="M713.993,2640h-2.98v-6.99h-1.521v-2.39h1.521v-1.45c0-1.97.845-3.17,3.331-3.17h2.041v2.44h-1.264c-0.968,0-1.124.34-1.124,0.97l0,1.21h2.5l-0.336,2.39h-2.163V2640Z"
+                      transform="translate(-709.5 -2626)" />
+                  </svg>
+                </a></li>
+              <li class="socials-list__item"><a href="https://twitter.com/" target="_blank"
+                  class="socials-list__item-link">
+                  <svg width="14" height="11" viewBox="0 0 14 11">
+                    <path class="twitter-ic_color"
+                      d="M756,2628.3a6.032,6.032,0,0,1-1.65.44,2.8,2.8,0,0,0,1.263-1.54,5.98,5.98,0,0,1-1.824.68,2.918,2.918,0,0,0-2.1-.88,2.825,2.825,0,0,0-2.873,2.78,2.7,2.7,0,0,0,.075.63,8.266,8.266,0,0,1-5.921-2.9,2.7,2.7,0,0,0-.389,1.39,2.761,2.761,0,0,0,1.278,2.32,2.985,2.985,0,0,1-1.3-.35v0.03a2.812,2.812,0,0,0,2.3,2.73,3.133,3.133,0,0,1-.757.09,2.413,2.413,0,0,1-.54-0.05,2.853,2.853,0,0,0,2.683,1.93,5.859,5.859,0,0,1-3.568,1.19,5.185,5.185,0,0,1-.685-0.04,8.318,8.318,0,0,0,4.4,1.25,7.976,7.976,0,0,0,8.173-7.9q0-.18-0.009-0.36A5.656,5.656,0,0,0,756,2628.3"
+                      transform="translate(-742 -2627)" />
+                  </svg>
+                </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block_separator">
+      <div class="container">
+        <div class="footer-bottom">
+          <div class="footer-bottom__right">
+            <ul class="footer-bottom__list">
+              <li class="footer-bottom__list-item"><a href="#" class="footer-bottom__list-link"> Legal notice</a></li>
+              <li class="footer-bottom__list-item"><a href="#" class="footer-bottom__list-link">Privacy policy </a>
+              </li>
+              <li class="footer-bottom__list-item"><a href="#" class="footer-bottom__list-link">Site map</a></li>
+            </ul>
+            <ul class="socials-list footer-bottom__socials-list">
+              <li class="socials-list__item"><a href="https://www.facebook.com/" target="_blank"
+                  class="socials-list__item-link">
+                  <svg width="7" height="14" viewBox="0 0 7 14">
+                    <path class="facebook-ic_color"
+                      d="M713.993,2640h-2.98v-6.99h-1.521v-2.39h1.521v-1.45c0-1.97.845-3.17,3.331-3.17h2.041v2.44h-1.264c-0.968,0-1.124.34-1.124,0.97l0,1.21h2.5l-0.336,2.39h-2.163V2640Z"
+                      transform="translate(-709.5 -2626)" />
+                  </svg>
+                </a></li>
+              <li class="socials-list__item"><a href="https://twitter.com/" target="_blank"
+                  class="socials-list__item-link">
+                  <svg width="14" height="11" viewBox="0 0 14 11">
+                    <path class="twitter-ic_color"
+                      d="M756,2628.3a6.032,6.032,0,0,1-1.65.44,2.8,2.8,0,0,0,1.263-1.54,5.98,5.98,0,0,1-1.824.68,2.918,2.918,0,0,0-2.1-.88,2.825,2.825,0,0,0-2.873,2.78,2.7,2.7,0,0,0,.075.63,8.266,8.266,0,0,1-5.921-2.9,2.7,2.7,0,0,0-.389,1.39,2.761,2.761,0,0,0,1.278,2.32,2.985,2.985,0,0,1-1.3-.35v0.03a2.812,2.812,0,0,0,2.3,2.73,3.133,3.133,0,0,1-.757.09,2.413,2.413,0,0,1-.54-0.05,2.853,2.853,0,0,0,2.683,1.93,5.859,5.859,0,0,1-3.568,1.19,5.185,5.185,0,0,1-.685-0.04,8.318,8.318,0,0,0,4.4,1.25,7.976,7.976,0,0,0,8.173-7.9q0-.18-0.009-0.36A5.656,5.656,0,0,0,756,2628.3"
+                      transform="translate(-742 -2627)" />
+                  </svg>
+                </a></li>
+            </ul>
+          </div>
+          <span class="footer-bottom__text footer-copyright">&copy; 2010–2015, The Template Group inc.</span>
+          <div class="share footer__bottom-share">
+            <a href="#" target="_blank" class="share__link">Share</a>
+            <span class="share__counter">1 437</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="js/item.js"></script>
+</body>
+
+</html>
