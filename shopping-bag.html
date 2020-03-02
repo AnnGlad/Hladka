@@ -23,7 +23,7 @@
           <a href="#" class="header__link xs-d-none">E-mail sing up</a>
           <a href="#" class="cart-link header__link">
             <img src="img/icons/ico_bag.png" alt="cart icon" class="cart-link__icon">
-            Bag <span id="cart-quantity">(0)</span></a>
+            Bag <span id="cart-total-header">£236.50 </span> (<span id="cart-quantity-header">4</span>)</a>
           <button class="menu-btn sm-d-none">
             <svg width="14" height="12" viewBox="0 0 14 12" class="menu-btn__menu-ic">
               <path id="ico_menu" class="menu-btn__menu-ic_color"
@@ -68,98 +68,215 @@
   <div class="main-content">
     <div class="bradcrumbs-holder block_separator">
       <div class="bradcrumbs container">
-        <a href="catalog.html" class="bradcrumbs__link">&lt; Back to catalog</a>
+        <h4 class="bradcrumbs__title">Shopping bag</h4>
       </div>
     </div>
-    <section class="item-section-holder block_separator">
-      <div class="item-section container">
-        <div class="item-view">
-          <div class="item-view__full">
-            <img src="img/items/only-skinny-jeans_full-0.jpg" alt="Only skinny jeans" class="item-view__img">
-          </div>
-          <div class="item-view__switcher">
-            <div class="item-view__switcher-thumbnail active">
-              <img src="img/items/only-skinny-jeans_thumb-0.jpg" alt="Only skinny jeans 1" class="item-view__img">
-            </div>
-            <div class="item-view__switcher-thumbnail">
-              <img src="img/items/only-skinny-jeans_thumb-1.jpg" alt="Only skinny jeans 2" class="item-view__img">
-            </div>
-            <div class="item-view__switcher-thumbnail">
-              <img src="img/items/only-skinny-jeans_thumb-2.jpg" alt="Only skinny jeans 3" class="item-view__img">
-            </div>
-          </div>
-        </div>
-        <div class="item-descr">
-          <h2 class="item-descr__title">Only skinny jeans</h2>
-          <div class="item-descr__price">£65.50</div>
-          <p class="section__p item-descr__text">Soft-touch jersey. Made from organic cotton</p>
-
-          <div class="item-desc__prod-prop-wrapper">
-            <div class="item-desc__prod-prop prod-size">
-              <span class="prod-prop__text">Size:</span>
-              <div class="prod-prop__value">
-                <input checked type="radio" value="UK 17" name="size" class="prod-prop__radio" id="uk17">
-                <label class="prod-prop__label" for="uk17">UK 17</label>
-              </div>
-              <div class="prod-prop__value">
-                <input type="radio" value="UK 18" name="size" class="prod-prop__radio" id="uk18">
-                <label class="prod-prop__label" for="uk18">UK 18</label>
-              </div>
-            </div>
-            <div class="item-desc__prod-prop prod-color">
-              <span class="prod-prop__text">Color:</span>
-              <div class="prod-prop__value">
-                <input checked type="radio" value="black" name="color" class="prod-prop__radio" id="black">
-                <label class="prod-prop__label" for="black">Black</label>
-              </div>
-              <div class="prod-prop__value">
-                <input type="radio" value="white" name="color" class="prod-prop__radio" id="white">
-                <label class="prod-prop__label" for="white">White</label>
-              </div>
-            </div>
-          </div>
-
-          <a href="#" class="btn item-section__btn">Add to bag</a>
-
-        </div>
-
-
-      </div>
-    </section>
-
     <div class="block_separator">
-      <div class="wrapper">
-        <div class="banners">
-          <div class="banner">
-            <a href="#" class="banner-link">
-              <img class="banner-link__img" src="img/adidas-blue.jpg" alt="adidas-blue">
-              <div class="banner-text banner-text_white">
-                <div class="banner-text__title">Adidas Blue</div>
-                <div class="banner-text__info banner-text__info_white">For men</div>
+      <div class="cart-section">
+        <div class="container">
+
+          <!-- <div class="cart-message">
+            <p class="cart-message__text">Your shopping bag is empty. Use <a href="catalog.html">Catalog</a> to add new
+              items</p>
+          </div> -->
+
+          <div class="cart__prod-holder">
+            <div class="cart__prod-col">
+              <div class="product-item cart-item">
+                <div class="product-img-wrap cart-item__img-wrap">
+                  <img src="img/only-skinny-jeans.jpg" alt="Only Skinny Jeans" class="product-img-wrap__img">
+                  <span class="product-img-wrap__label">New</span>
+                  <div class="product-img-wrap__hover">
+                    <a href="#" class="product-img-wrap__hover-link">Edit item</a>
+                  </div>
+                </div>
+                <div class="product__item-descr cart-item__descr">
+                  <a href="#" class="product-item__link">Only Skinny Jeans</a>
+                  <div class="product-item__price-holder">
+                    <p class="product-item__price ">£65.50</p>
+                  </div>
+                  <div class="cart-item__prod-prop prod-prop">
+                    <p>Color: <span class="color">Philippa wash</span></p>
+                    <p>Size: <span class="size">UK 17</span></p>
+                    <div class="prod-prop-quantity_wrap">
+                      <span> Quantity:</span>
+                      <div class="prod-prop-quantity">
+                        <button class="btn-minus">
+                          <svg class="minus-ic" width="8" height="2" viewBox="0 0 8 2">
+                            <rect class="minus-ic_color" width="8" height="2" />
+                          </svg>
+                        </button>
+                        <input type="number" min="1" value="1" class="quantity-input">
+                        <button class="btn-plus">
+                          <svg width="8" height="8" viewBox="0 0 8 8">
+                            <image width="8" height="8"
+                              xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAANElEQVQYlWNABh+9Iv6DMLIYE4oKLICgAkZ0I9EBYRP+/0cY8Mk7Eszh27qckUqOZGBgAAAJ6w7A9gR3WAAAAABJRU5ErkJggg==" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <button class="btn-text btn-remove">Remove item</button>
+                  </div>
+                </div>
               </div>
-            </a>
-          </div>
-          <div class="banner xs-d-none">
-            <a href="catalog.html" class="banner-link">
-              <img class="banner-link__img" src="img/repair-patches.jpg" alt="repair-patches">
-              <div class="banner-text banner-text_bottom banner-text_center banner-text_white">
-                <div class="banner-text__title">Repair Patches</div>
-                <div class="banner-text__info banner-text__info_white">£ 150.50</div>
+            </div>
+
+            <div class="cart__prod-col">
+              <div class="product-item cart-item">
+                <div class="product-img-wrap cart-item__img-wrap">
+                  <img src="img/paul-joe-sister-jumper-with-neon-trims.jpg" alt="Paul & Joe Sister Jumper
+                  with Neon Trims" class="product-img-wrap__img">
+                  <div class="product-img-wrap__hover">
+                    <a href="#" class="product-img-wrap__hover-link">Edit item</a>
+                  </div>
+                </div>
+                <div class="product__item-descr cart-item__descr">
+                  <a href="#" class="product-item__link">Paul & Joe Sister Jumper
+                    with Neon Trims</a>
+                  <div class="product-item__price-holder">
+                    <p class="product-item__price ">£19.75</p>
+                  </div>
+                  <div class="cart-item__prod-prop prod-prop">
+                    <p>Color: <span class="color">Blue</span></p>
+                    <p>Size: <span class="size">UK 18</span></p>
+                    <div class="prod-prop-quantity_wrap">
+                      <span> Quantity:</span>
+                      <div class="prod-prop-quantity">
+                        <button class="btn-minus">
+                          <svg class="minus-ic" width="8" height="2" viewBox="0 0 8 2">
+                            <rect class="minus-ic_color" width="8" height="2" />
+                          </svg>
+                        </button>
+                        <input type="number" min="1" value="1" class="quantity-input" pattern="[0-9]{10}">
+                        <button class="btn-plus">
+                          <svg width="8" height="8" viewBox="0 0 8 8">
+                            <image width="8" height="8"
+                              xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAANElEQVQYlWNABh+9Iv6DMLIYE4oKLICgAkZ0I9EBYRP+/0cY8Mk7Eszh27qckUqOZGBgAAAJ6w7A9gR3WAAAAABJRU5ErkJggg==" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <button class="btn-text btn-remove">Remove item</button>
+                  </div>
+                </div>
               </div>
-            </a>
-          </div>
-          <div class="banner xs-d-none sm-d-none lg-visible">
-            <a href="catalog.html" class="banner-link">
-              <img class="banner-link__img" src="img/beg-sale.jpg" alt="sale">
-              <div class="banner-text banner-text_bottom banner-text_center">
-                <div class="banner-text__title banner-text__title_red">Sale</div>
-                <div class="banner-text__info">-70%</div>
+            </div>
+
+
+            <div class="cart__prod-col">
+              <div class="product-item cart-item">
+                <div class="product-img-wrap cart-item__img-wrap">
+                  <img src="img/boyfriend-tshirt-with-bohemian-print.jpg" alt="Boyfriend T-Shirt 
+                  with Bohemian Print" class="product-img-wrap__img">
+                  <div class="product-img-wrap__hover">
+                    <a href="#" class="product-img-wrap__hover-link">Edit item</a>
+                  </div>
+                </div>
+                <div class="product__item-descr cart-item__descr">
+                  <a href="#" class="product-item__link">Boyfriend T-Shirt
+                    with Bohemian Print</a>
+                  <div class="product-item__price-holder">
+                    <p class="product-item__price ">£90.00</p>
+                  </div>
+                  <div class="cart-item__prod-prop prod-prop">
+                    <p>Color: <span class="color">Black</span></p>
+                    <p>Size: <span class="size">UK 18</span></p>
+                    <div class="prod-prop-quantity_wrap">
+                      <span> Quantity:</span>
+                      <div class="prod-prop-quantity">
+                        <button class="btn-minus">
+                          <svg class="minus-ic" width="8" height="2" viewBox="0 0 8 2">
+                            <rect class="minus-ic_color" width="8" height="2" />
+                          </svg>
+                        </button>
+                        <input type="number" min="1" value="1" class="quantity-input">
+                        <button class="btn-plus">
+                          <svg width="8" height="8" viewBox="0 0 8 8">
+                            <image width="8" height="8"
+                              xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAANElEQVQYlWNABh+9Iv6DMLIYE4oKLICgAkZ0I9EBYRP+/0cY8Mk7Eszh27qckUqOZGBgAAAJ6w7A9gR3WAAAAABJRU5ErkJggg==" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <button class="btn-text btn-remove">Remove item</button>
+                  </div>
+                </div>
               </div>
-            </a>
+            </div>
+
+            <div class="cart__prod-col">
+              <div class="product-item cart-item">
+                <div class="product-img-wrap cart-item__img-wrap">
+                  <img src="img/neck-knitted-jumper.jpg" alt="Neck Knitted
+                  Jumper" class="product-img-wrap__img">
+                  <span class="product-img-wrap__label">New</span>
+                  <div class="product-img-wrap__hover">
+                    <a href="#" class="product-img-wrap__hover-link">Edit item</a>
+                  </div>
+                </div>
+                <div class="product__item-descr cart-item__descr">
+                  <a href="#" class="product-item__link">Neck Knitted
+                    Jumper</a>
+                  <div class="product-item__price-holder">
+                    <p class="product-item__price ">£76.25</p>
+                  </div>
+                  <div class="cart-item__prod-prop prod-prop">
+                    <p>Color: <span class="color">Black</span></p>
+                    <p>Size: <span class="size">UK 19</span></p>
+                    <div class="prod-prop-quantity_wrap">
+                      <span> Quantity:</span>
+                      <div class="prod-prop-quantity">
+                        <button class="btn-minus">
+                          <svg class="minus-ic" width="8" height="2" viewBox="0 0 8 2">
+                            <rect class="minus-ic_color" width="8" height="2" />
+                          </svg>
+                        </button>
+                        <input type="number" min="1" value="1" class="quantity-input">
+                        <button class="btn-plus">
+                          <svg width="8" height="8" viewBox="0 0 8 8">
+                            <image width="8" height="8"
+                              xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAANElEQVQYlWNABh+9Iv6DMLIYE4oKLICgAkZ0I9EBYRP+/0cY8Mk7Eszh27qckUqOZGBgAAAJ6w7A9gR3WAAAAABJRU5ErkJggg==" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <button class="btn-text btn-remove">Remove item</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
+
+        <div class="cart-info block_separator">
+          <div class="container">
+            <p class="cart-info__text">You've qualified for Free UK Next Day Delivery on your order. Don't forget to
+              enter the code
+              <b>nexday</b> at
+              checkout</p>
+          </div>
+        </div>
+
+        <div class="cart-bottom container">
+
+          <div class="cart-total">
+            <div class="cart__total-discount_wrap">
+              <p class="cart__total-text">Applied discount: <span class="cart__total-discount">£15.00</span></p>
+            </div>
+            <div class="cart__total-price_wrap">
+              <p class="cart__total-text">Total price: <span class="cart__total-price">£236.50</span></p>
+            </div>
+          </div>
+          <a href="#" class="btn btn-checkout">Checkout</a>
+          <button class="btn-text btn-empty-bag">Empty bag</button>
+
+        </div>
+
+
       </div>
     </div>
+
   </div>
 
   <footer>
@@ -269,8 +386,7 @@
     </div>
 
   </footer>
-
-  <script src="js/item.js"></script>
+  <script src="js/shopping-bag.js"></script>
 </body>
 
 </html>

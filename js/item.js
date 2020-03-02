@@ -29,3 +29,4 @@ function switchImg(clickedThumb) {
   }
   itemFull.src = newSrc;
 }
+
