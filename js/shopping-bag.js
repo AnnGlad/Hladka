@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 let cartProdHolder = document.querySelector(".cart__prod-holder");
 let cartItems = document.getElementsByClassName("cart__prod-col");
 let cartContainer = document.querySelector(".cart-section .container");
@@ -14,7 +14,7 @@ cartProdHolder.onclick = function (event) {
   if (removeItemBtn) {
     let cartItem = target.parentNode.parentNode.parentNode.parentNode;
     let quantity = target.parentNode.querySelector(".quantity-input").value;
-    console.log(quantity);
+    // console.log(quantity);
     cartItem.remove();
     if (cartItems.length == 0) {
       emptyMsg();
@@ -45,7 +45,7 @@ function emptyHeaderCart() {
 function checkoutMessage() {
   let message = (
     `<div class="cart-message container">
-        <p class="cart-message__text">Thank you for your purchase	<b>&#10084;</b></p>
+        <p class="cart-message__text">Thank you for your purchase <b>&#10084;</b></p>
       </div>`);
   cartSection.innerHTML = message;
 }
@@ -61,16 +61,16 @@ if (cartItems.length != 0) {
 if (cartItems.length != 0) {
   let quantities = document.querySelectorAll(".quantity-input");
   quantities.forEach(function (el) {
-    el.addEventListener("change", inputValidation);
+    el.addEventListener("change", validateInput);
 
   })
 }
-
-function inputValidation() {
+function validateInput() {
   console.log(this);
-  let reg = new RegExp('^[0-9]+$');
+  let reg = new RegExp("^[0-9]+$'");
   if (!(this.value.match(reg))) {
     alert("Please enter only positive integers.");
     this.value = 1; //(*extra miles: or chage to localstorage value from map)
   }
 }
+

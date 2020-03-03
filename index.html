@@ -21,9 +21,10 @@
         </div>
         <div class="header-top__right">
           <a href="#" class="header__link xs-d-none">E-mail sing up</a>
-          <a href="#" class="cart-link header__link">
+          <a href="shopping-bag.html" class="cart-link header__link">
             <img src="img/icons/ico_bag.png" alt="cart icon" class="cart-link__icon">
-            Bag <span id="cart-quantity">(0)</span></a>
+            Bag <span id="cart-total-header"></span> (<span id="cart-quantity-header">0</span>)
+          </a>
           <button class="menu-btn sm-d-none">
             <svg width="14" height="12" viewBox="0 0 14 12" class="menu-btn__menu-ic">
               <path id="ico_menu" class="menu-btn__menu-ic_color"
@@ -288,7 +289,6 @@
           </div>
           <!-- End of double-slider -->
           <span class="equals lg-visible">=</span>
-          <!-- <div class="best-offer__total-wrap"> -->
           <div class="best-offer__total">
 
             <div class="total-price">
@@ -303,14 +303,13 @@
 
 
               </div>
-              <a href="#" class="btn best-offer__btn lg-visible">Add to bag</a>
+              <a href="shopping-bag.html" class="btn best-offer__btn lg-visible">Add to bag</a>
             </div>
           </div>
 
           <div class="best-offer__btn-holder lg-d-none">
-            <a href="#" class="btn">Add to bag</a>
+            <a href="shopping-bag.html" class="btn">Add to bag</a>
           </div>
-          <!-- </div> -->
 
 
         </div>
@@ -515,6 +514,7 @@
 
   </footer>
   <script src="js/main.js"></script>
+  <script src="js/slider.js"></script>
 
 </body>
 
