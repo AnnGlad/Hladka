@@ -10,7 +10,10 @@ let checkoutBtn = document.querySelector(".btn-checkout");
 
 cartProdHolder.onclick = function (event) {
   let target = event.target;
+  // console.log(target);
   let removeItemBtn = target.className.includes("btn-remove");
+  let plusBtn = target.className.includes("btn-plus");
+  let minusBtn = target.className.includes("btn-minus");
   if (removeItemBtn) {
     let cartItem = target.parentNode.parentNode.parentNode.parentNode;
     let quantity = target.parentNode.querySelector(".quantity-input").value;
@@ -21,6 +24,17 @@ cartProdHolder.onclick = function (event) {
       emptyHeaderCart();
     }
   }
+  if (plusBtn) {
+    let currentInput = target.parentNode.querySelector(".quantity-input");
+    let val = parseInt(target.parentNode.querySelector(".quantity-input").value);
+    let chageVal = 1;
+    chageVal += val;
+    currentInput.value = chageVal;
+
+    // console.log(chageVal);
+  }
+  // if (minusBtn) {
+  // }
 }
 
 emptyBag.onclick = function () {
@@ -58,19 +72,21 @@ if (cartItems.length != 0) {
 }
 
 
-if (cartItems.length != 0) {
-  let quantities = document.querySelectorAll(".quantity-input");
-  quantities.forEach(function (el) {
-    el.addEventListener("change", validateInput);
+// if (cartItems.length != 0) {
+//   let quantities = document.querySelectorAll(".quantity-input");
+//   quantities.forEach(function (el) {
+//     el.addEventListener("change", validateInput);
 
-  })
-}
-function validateInput() {
-  console.log(this);
-  let reg = new RegExp("^[0-9]+$'");
-  if (!(this.value.match(reg))) {
-    alert("Please enter only positive integers.");
-    this.value = 1; //(*extra miles: or chage to localstorage value from map)
-  }
-}
+//   })
+// }
+// function validateInput(inputVal) {
+//   console.log("change");
+//   // console.log(this);
+//   // let reg = new RegExp("^\d+$");
+//   // let reg = new RegExp("^[1-9]\d*$");
+//   // if (!(inputVal.value.match(reg))) {
+//   //   alert("Please enter only positive integers.");
+//   //   inputVal.value = 1; //(*extra miles: or chage to localstorage value from map)
+//   // }
+// }
 
