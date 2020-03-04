@@ -1059,8 +1059,9 @@ footer {
 }
 
 .quantity-input {
+  pointer-events: none;
   max-width: calc(100% - 40px);
-  max-width: 12px;
+  max-width: 13px;
   border: none;
   background: transparent;
   text-align: center;

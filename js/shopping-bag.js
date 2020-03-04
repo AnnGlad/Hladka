@@ -6,18 +6,19 @@ let cartSection = document.querySelector(".cart-section");
 let emptyBag = document.querySelector(".btn-empty-bag");
 let headerTotal = document.getElementById("cart-total-header");
 let headerQuantity = document.getElementById("cart-quantity-header");
+let cartTotal = document.querySelector(".cart__total-price");
 let checkoutBtn = document.querySelector(".btn-checkout");
 
 cartProdHolder.onclick = function (event) {
   let target = event.target;
-  // console.log(target);
   let removeItemBtn = target.className.includes("btn-remove");
   let plusBtn = target.className.includes("btn-plus");
   let minusBtn = target.className.includes("btn-minus");
   if (removeItemBtn) {
     let cartItem = target.parentNode.parentNode.parentNode.parentNode;
-    let quantity = target.parentNode.querySelector(".quantity-input").value;
-    // console.log(quantity);
+    let price = target.parentNode.parentNode.parentNode.parentNode.querySelector(".product-item__price").innerHTML;
+    recalcTotal(price, target);
+    console.log(target);
     cartItem.remove();
     if (cartItems.length == 0) {
       emptyMsg();
@@ -30,13 +31,22 @@ cartProdHolder.onclick = function (event) {
     let chageVal = 1;
     chageVal += val;
     currentInput.value = chageVal;
+    let price = target.parentNode.parentNode.parentNode.parentNode.querySelector(".product-item__price").innerHTML;
+    recalcTotal(price, target);
 
-    // console.log(chageVal);
   }
-  // if (minusBtn) {
-  // }
+  if (minusBtn) {
+    let val = parseInt(target.parentNode.querySelector(".quantity-input").value);
+    let currentInput = target.parentNode.querySelector(".quantity-input");
+    let price = target.parentNode.parentNode.parentNode.parentNode.querySelector(".product-item__price").innerHTML;
+    if (val > 1) {
+      let chageVal = val;
+      chageVal -= 1;
+      currentInput.value = chageVal;
+      recalcTotal(price, target);
+    }
+  }
 }
-
 emptyBag.onclick = function () {
   let question = confirm("Delete all items from the cart?");
   if (question) {
@@ -71,22 +81,32 @@ if (cartItems.length != 0) {
   })
 }
 
-
-// if (cartItems.length != 0) {
-//   let quantities = document.querySelectorAll(".quantity-input");
-//   quantities.forEach(function (el) {
-//     el.addEventListener("change", validateInput);
-
-//   })
-// }
-// function validateInput(inputVal) {
-//   console.log("change");
-//   // console.log(this);
-//   // let reg = new RegExp("^\d+$");
-//   // let reg = new RegExp("^[1-9]\d*$");
-//   // if (!(inputVal.value.match(reg))) {
-//   //   alert("Please enter only positive integers.");
-//   //   inputVal.value = 1; //(*extra miles: or chage to localstorage value from map)
-//   // }
-// }
-
+function recalcTotal(price, btn) {
+  price = parseFloat(price.slice(1));
+  let curHeaderPrice = parseFloat(headerTotal.innerHTML.slice(1));
+  let headerQuantityVal = parseInt(headerQuantity.innerHTML);
+  if (btn.className == "btn-plus") {
+    let newTotal = "£" + (curHeaderPrice + price).toFixed(2);
+    headerQuantityVal++;
+    headerTotal.innerHTML = newTotal;
+    cartTotal.innerHTML = newTotal;
+  }
+  if (btn.className == "btn-minus") {
+    let newTotal = "£" + (curHeaderPrice - price).toFixed(2);
+    if (headerQuantityVal != 0) {
+      headerQuantityVal--;
+    }
+    headerTotal.innerHTML = newTotal;
+    cartTotal.innerHTML = newTotal;
+  }
+  if (btn.className.includes("btn-remove")) {
+    let quantity = btn.parentNode.querySelector(".quantity-input").value;
+    let newTotal = "£" + (curHeaderPrice - (price * quantity)).toFixed(2);
+    if (headerQuantityVal != 0) {
+      headerQuantityVal -= quantity;
+    }
+    headerTotal.innerHTML = newTotal;
+    cartTotal.innerHTML = newTotal;
+  }
+  headerQuantity.innerHTML = headerQuantityVal;
+}

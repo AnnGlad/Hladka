@@ -30,3 +30,24 @@ function switchImg(clickedThumb) {
   itemFull.src = newSrc;
 }
 
+// Header bag
+let buyBtn = document.getElementById("buy-btn");
+let headerTotal = document.getElementById("cart-total-header");
+let headerQuantity = document.getElementById("cart-quantity-header");
+
+buyBtn.onclick = function () {
+  let counter = 1;
+  let price = document.querySelector(".item-descr__price").innerHTML;
+  price = parseFloat(price.slice(1));
+  let curHeaderPrice;
+  if (headerTotal.innerHTML) {
+    curHeaderPrice = parseFloat(headerTotal.innerHTML.slice(1));
+  } else {
+    curHeaderPrice = 0;
+  }
+  let headerQuantityVal = parseInt(headerQuantity.innerHTML);
+  let newTotal = "£" + (curHeaderPrice + price).toFixed(2);
+  headerTotal.innerHTML = newTotal;
+  headerQuantity.innerHTML = (headerQuantityVal + counter);
+  counter++;
+}
