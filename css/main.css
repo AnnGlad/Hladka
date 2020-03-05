@@ -2030,6 +2030,10 @@ footer {
     background: #f7f7f7;
   }
 
+  .subfilter__value_selected {
+    color: #f14a58;
+  }
+
   /* Item page */
 
   .bradcrumbs__title {
