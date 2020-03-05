@@ -1,33 +1,24 @@
-// if (matchMedia) {
-//   let mobileAndTabletView = window.matchMedia("max-width: 1023px)");
-//   mobileAndTabletView.addListener(tabletSearch);
-//   tabletSearch(tabletView);
-// let desktopView = window.matchMedia("min-width: 1024px)");
-// } else {
-//   window.addEventListener("load", function () {
-//     if (window.innerWidth < 768) {
-//       mobileMenu();
-//     } else if (window.innerWidth < 1024) {
-//       tabletSearch();
-//     }
-//   });
-// }
-// let mobile = false;
-// let desktop = true;
+"use strict";
+if (matchMedia) {
+  let desktop = window.matchMedia("(min-width: 1024px)");
+  desktop.addListener(filterView);
+  filterView(desktop);
+}
+function filterView(query) {
+  console.log(query.matches);
+  if (query.matches) {
+    desktopFilterView();
+    console.log("desktop");
+  } else {
+    mobFilterView();
+  }
+}
 
-// filterList.onmouseover = function (event) {
-//   let target = event.target;
-//   console.log(target);
-
-
-// }
-// console.log(filterList);
 function desktopFilterView() {
   let filterList = document.querySelector(".filters-list");
   let flelterSelects = filterList.querySelectorAll(".filter-select");
   flelterSelects.forEach(element => {
     element.addEventListener("mouseover", desktopValueChanger);
-    // console.log(element);
   });
 
 }
@@ -39,12 +30,7 @@ function desktopValueChanger() {
     if (target != subfilter) {
       let selectVal = select.querySelector(".filter-select-values");
       let items = subfilter.querySelectorAll(".subfilter__value");
-      items.forEach(el => {
-        let selected = el.className.includes("subfilter__value_selected");
-        if (selected) {
-          el.classList.remove("subfilter__value_selected");
-        }
-      });
+      removeClassFromItem(items);
       target.classList.toggle("subfilter__value_selected");
       let itemText = target.innerText;
       let itemVal = target.getAttribute("data-val");
@@ -70,4 +56,73 @@ function desktopValueChanger() {
 
   }
 }
-desktopFilterView();
+
+function mobFilterView() {
+  console.log("mobile");
+  let filterBtn = document.querySelector(".filter-top__btn");
+  let filterList = document.querySelector(".filters-list-wrap");
+  filterBtn.onclick = function () {
+    this.classList.toggle("open");
+    filterList.classList.toggle("active");
+  }
+
+  filterList.onclick = function (event) {
+    let target = event.target;
+    if (target.className.includes("subfilter__value")) {
+      let item = target;
+      let itemVal = target.getAttribute("data-val");
+
+      // if (item.parentNode.parentNode.className.includes("selected")) {
+      //   console.log("selected");
+      // } else {
+
+      let items = item.parentNode.querySelectorAll(".subfilter__value");
+      removeClassFromItem(items);
+      item.classList.toggle("subfilter__value_selected");
+      let filterName = item.parentNode.parentNode.querySelector(".filter-select__name").innerText;
+      let filterNameSmallText = filterName.toLowerCase()
+      let span;
+
+      if (filterNameSmallText.includes("product")) {
+        span = document.getElementById("filter-product");
+      }
+      if (filterNameSmallText.includes("fashion")) {
+        span = document.getElementById("filter-fashion");
+      }
+      if (filterNameSmallText.includes("color")) {
+        span = document.getElementById("filter-color");
+      }
+      if (filterNameSmallText.includes("size")) {
+        span = document.getElementById("filter-size");
+      }
+      if (filterNameSmallText.includes("brand")) {
+        span = document.getElementById("filter-brand");
+      }
+      if (filterNameSmallText.includes("price")) {
+        span = document.getElementById("filter-price");
+      }
+
+      if (itemVal != 0) {
+        span.innerHTML = target.innerText;
+        span.classList.add("selected");
+      } else {
+        span.innerHTML = filterName;
+        span.classList.remove("selected");
+      }
+
+
+
+    }
+
+  }
+  // }
+}
+
+function removeClassFromItem(arr) {
+  arr.forEach(el => {
+    let selected = el.className.includes("subfilter__value_selected");
+    if (selected) {
+      el.classList.remove("subfilter__value_selected");
+    }
+  });
+}

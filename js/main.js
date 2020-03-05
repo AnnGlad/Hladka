@@ -9,15 +9,8 @@ if (matchMedia) {
   let tabletView = window.matchMedia("(min-width: 768px) and (max-width: 1023px)");
   tabletView.addListener(tabletSearch);
   tabletSearch(tabletView);
-} else {
-  window.addEventListener("load", function () {
-    if (window.innerWidth < 768) {
-      mobileMenu();
-    } else if (window.innerWidth < 1024) {
-      tabletSearch();
-    }
-  });
 }
+
 
 function mobileMenu(query) {
   if (query.matches) {

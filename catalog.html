@@ -32,9 +32,8 @@
             </svg>
 
             <svg width="15" height="15" viewBox="0 0 15 15" class="menu-btn__close-ic">
-              <path id="ico_close" class="menu-btn__close-ic-color"
-                d="M339.993,29.375l2.382-2.382,12.632,12.632-2.382,2.382Zm12.632-2.382,2.382,2.382L342.375,42.007l-2.382-2.382Z"
-                transform="translate(-340 -27)" />
+              <image width="15" height="15"
+                xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABPElEQVQokXXTP0vcQRDG8c+plZb+yUsQCyv1FCVYaSFCwMrGRrEQa1+ChfZaCF5vmyYIgWBQEiGBnIVaiIWFIFwT0FSiYXRPlr1zmh87u9+ZZx7mV/k7twgj2ME6fns/OvAdn7HdhSkcogdHGMVlG7yCH6gmphGd7zCQPWrgA54K+DSBbxEyFvAvy/WlDpUst1eCWAn4JEm9yS6qqcBgzIbVAlxCrSsdLjCEb1mH8Tazh8JJ1CXZ+cUEjluseo3bpLCez5zHMz7isciHebNJofdgacbOIhfmbRYmtsC72CgfpfMn/ER/CVfSrGsZcI8ZfMlyYWbT3Be4O1WMrWlGmBcPv2K+WNle/MJwwH/aLMBYZk6YNY2H7D4angW8X4Dxp5wXuQCjYL6JtYC3sIzr9D0owGaEkihwFSBW/gNQJkHNuuC+2QAAAABJRU5ErkJggg==" />
             </svg>
           </button>
         </div>
@@ -72,18 +71,17 @@
         <div class="filter-top-mobile-wrap container">
           <div class="filter-top-mobile">
             <div class="selected-filters">
-              <span class="selected-filters__text selected">Casual style</span>,
-              <span class="selected-filters__text">Product type</span>,
-              <span class="selected-filters__text">Color</span>,
-              <span class="selected-filters__text selected">Antipodium</span>,
-              <span class="selected-filters__text selected">UK 18</span>,
-              <span class="selected-filters__text"> Price range</span>,
+              <span id="filter-fashion" class="selected-filters__text selected">Casual style</span>,
+              <span id="filter-product" class="selected-filters__text">Product type</span>,
+              <span id="filter-color" class="selected-filters__text">Color</span>,
+              <span id="filter-brand" class="selected-filters__text selected">Antipodium</span>,
+              <span id="filter-size" class="selected-filters__text selected">UK 18</span>,
+              <span id="filter-price" class="selected-filters__text"> Price range</span>,
             </div>
             <button class="filter-top__btn">
               <svg width="15" height="15" viewBox="0 0 15 15" class="close-ic">
-                <path class="close-ic__path"
-                  d="M339.993,29.375l2.382-2.382,12.632,12.632-2.382,2.382Zm12.632-2.382,2.382,2.382L342.375,42.007l-2.382-2.382Z"
-                  transform="translate(-340 -27)" />
+                <image width="15" height="15"
+                  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABPElEQVQokXXTP0vcQRDG8c+plZb+yUsQCyv1FCVYaSFCwMrGRrEQa1+ChfZaCF5vmyYIgWBQEiGBnIVaiIWFIFwT0FSiYXRPlr1zmh87u9+ZZx7mV/k7twgj2ME6fns/OvAdn7HdhSkcogdHGMVlG7yCH6gmphGd7zCQPWrgA54K+DSBbxEyFvAvy/WlDpUst1eCWAn4JEm9yS6qqcBgzIbVAlxCrSsdLjCEb1mH8Tazh8JJ1CXZ+cUEjluseo3bpLCez5zHMz7isciHebNJofdgacbOIhfmbRYmtsC72CgfpfMn/ER/CVfSrGsZcI8ZfMlyYWbT3Be4O1WMrWlGmBcPv2K+WNle/MJwwH/aLMBYZk6YNY2H7D4angW8X4Dxp5wXuQCjYL6JtYC3sIzr9D0owGaEkihwFSBW/gNQJkHNuuC+2QAAAABJRU5ErkJggg==" />
               </svg>
               <span class="arrow-down">&nbsp;</span>
 
@@ -114,7 +112,7 @@
                   <span class="filter-select__name">Product type</span>
                 </div>
                 <ul class="filter-select__list subfilter">
-                  <li class="subfilter__value subfilter__value_default" data-val="0">Not selected</li>
+                  <li class="subfilter__value subfilter__value_selected" data-val="0">Not selected</li>
                   <li class="subfilter__value" data-val="Coats & Jackets">Coats & Jackets</li>
                   <li class="subfilter__value" data-val="Dresses">Dresses</li>
                   <li class="subfilter__value" data-val="Jersey Tops">Jersey Tops</li>
@@ -126,7 +124,7 @@
                   <span class="filter-select__name">Color</span>
                 </div>
                 <ul class="filter-select__list subfilter">
-                  <li class="subfilter__value subfilter__value_default" data-val="0">Not selected</li>
+                  <li class="subfilter__value subfilter__value_selected" data-val="0">Not selected</li>
                   <li class="subfilter__value" data-val="Black">Black</li>
                   <li class="subfilter__value" data-val="Blue">Blue</li>
                   <li class="subfilter__value" data-val="Red">Red</li>
@@ -173,7 +171,7 @@
                   <span class="filter-select__name">Price range</span>
                 </div>
                 <ul class="filter-select__list subfilter">
-                  <li class="subfilter__value subfilter__value_default" data-val="0">Not selected</li>
+                  <li class="subfilter__value subfilter__value_selected" data-val="0">Not selected</li>
                   <li class="subfilter__value" data-val="To £99">To £99</li>
                   <li class="subfilter__value" data-val="£100-£299">£100-£299</li>
                   <li class="subfilter__value" data-val="From £300">From £300</li>
