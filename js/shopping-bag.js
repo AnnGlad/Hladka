@@ -18,7 +18,6 @@ cartProdHolder.onclick = function (event) {
     let cartItem = target.parentNode.parentNode.parentNode.parentNode;
     let price = target.parentNode.parentNode.parentNode.parentNode.querySelector(".product-item__price").innerHTML;
     recalcTotal(price, target);
-    console.log(target);
     cartItem.remove();
     if (cartItems.length == 0) {
       emptyMsg();

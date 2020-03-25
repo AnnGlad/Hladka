@@ -5,10 +5,8 @@ if (matchMedia) {
   filterView(desktop);
 }
 function filterView(query) {
-  console.log(query.matches);
   if (query.matches) {
     desktopFilterView();
-    console.log("desktop");
   } else {
     mobFilterView();
   }
@@ -19,6 +17,7 @@ function desktopFilterView() {
   let flelterSelects = filterList.querySelectorAll(".filter-select");
   flelterSelects.forEach(element => {
     element.addEventListener("mouseover", desktopValueChanger);
+    element.addEventListener("mouseover", hoverChanger);
   });
 
 }
@@ -35,6 +34,7 @@ function desktopValueChanger() {
       let itemText = target.innerText;
       let itemVal = target.getAttribute("data-val");
       let selectValText = selectVal.querySelector(".filter-select__value");
+
       if (itemVal != 0) {
         let selectedItem = document.createElement("span");
         selectedItem.className = "filter-select__value";
@@ -52,13 +52,20 @@ function desktopValueChanger() {
           selectValText.remove();
         }
       }
+      subfilter.classList.add("hide");
     }
+  }
 
+}
+
+function hoverChanger() {
+  let subfilter = this.querySelector(".subfilter");
+  if (subfilter.className.includes("hide")) {
+    subfilter.classList.remove("hide");
   }
 }
 
 function mobFilterView() {
-  console.log("mobile");
   let filterBtn = document.querySelector(".filter-top__btn");
   let filterList = document.querySelector(".filters-list-wrap");
   filterBtn.onclick = function () {
@@ -71,10 +78,6 @@ function mobFilterView() {
     if (target.className.includes("subfilter__value")) {
       let item = target;
       let itemVal = target.getAttribute("data-val");
-
-      // if (item.parentNode.parentNode.className.includes("selected")) {
-      //   console.log("selected");
-      // } else {
 
       let items = item.parentNode.querySelectorAll(".subfilter__value");
       removeClassFromItem(items);
@@ -110,12 +113,9 @@ function mobFilterView() {
         span.classList.remove("selected");
       }
 
-
-
     }
 
   }
-  // }
 }
 
 function removeClassFromItem(arr) {

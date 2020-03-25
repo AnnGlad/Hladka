@@ -16,9 +16,11 @@ function mobileMenu(query) {
   if (query.matches) {
     let menuBtn = document.querySelector(".menu-btn");
     let menu = document.querySelector(".header-menu-wrapper");
+    let header = document.querySelector(".header");
     menuBtn.onclick = function () {
       menuBtn.classList.toggle("active");
       menu.classList.toggle("active");
+      header.classList.toggle("fixed");
     }
   }
 }

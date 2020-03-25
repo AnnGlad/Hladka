@@ -30,7 +30,6 @@ function switchImg(clickedThumb) {
   itemFull.src = newSrc;
 }
 
-// Header bag
 let buyBtn = document.getElementById("buy-btn");
 let headerTotal = document.getElementById("cart-total-header");
 let headerQuantity = document.getElementById("cart-quantity-header");
