@@ -77,4 +77,3 @@ window.onload = function () {
   slider("slider-2");
 
 }
-
